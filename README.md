@@ -31,13 +31,12 @@ License
 
     - NodeJS SDK improved to support the following new APIs
 
-        - Unsubscribe Links
-        - Find and Merge API
-        - Get Related Records of Deleted Record API
-        - Digest API
-        - Features API
-        - Global Picklist API
-        - Unblock Email API      
+      - [Unsubscribe Links](https://www.zoho.com/crm/developer/docs/api/v6/get-unsubscribe-links.html)
+      - [Find and Merge API](https://www.zoho.com/crm/developer/docs/api/v6/merge-records.html)
+      - [Get Related Records of Deleted Record API](https://www.zoho.com/crm/developer/docs/api/v6/get-related-records-of-deleted-record.html)
+      - [Features API](https://www.zoho.com/crm/developer/docs/api/v6/get-features.html)
+      - [Global Picklist API](https://www.zoho.com/crm/developer/docs/api/v6/get-global-picklist.html)
+      - [Unblock Email API](https://www.zoho.com/crm/developer/docs/api/v6/unblock-emails.html)  
 
 
 For older versions, please [refer](https://github.com/zoho/zohocrm-nodejs-sdk-6.0/releases).
