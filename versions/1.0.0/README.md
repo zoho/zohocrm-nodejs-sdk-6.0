@@ -782,14 +782,14 @@ class Record {
   }
   static async getRecords(moduleAPIName) {
     try {
-      let recordOperations = new ZOHOCRMSDK.Records.RecordOperations(moduleAPIName);
+      let recordOperations = new ZOHOCRMSDK.Record.RecordOperations(moduleAPIName);
       let paramInstance = new ZOHOCRMSDK.ParameterMap();
-      await paramInstance.add(ZOHOCRMSDK.Records.GetRecordsParam.APPROVED, "both");
+      await paramInstance.add(ZOHOCRMSDK.Record.GetRecordsParam.APPROVED, "both");
       let fieldNames = ["Company", "Email"];
       await paramInstance.add(ZOHOCRMSDK.Record.GetRecordsParam.FIELDS, fieldNames.toString());
       let headerInstance = new ZOHOCRMSDK.HeaderMap();
       await headerInstance.add(
-        ZOHOCRMSDK.Records.GetRecordsHeader.IF_MODIFIED_SINCE,
+        ZOHOCRMSDK.Record.GetRecordsHeader.IF_MODIFIED_SINCE,
         new Date("2020-01-01T00:00:00+05:30")
       );
       let response = await recordOperations.getRecords(
@@ -806,7 +806,7 @@ class Record {
         }
         let responseObject = response.getObject();
         if (responseObject != null) {
-          if (responseObject instanceof ZOHOCRMSDK.Records.ResponseWrapper) {
+          if (responseObject instanceof ZOHOCRMSDK.Record.ResponseWrapper) {
             let records = responseObject.getData();
             for (let index = 0; index < records.length; index++) {
               let record = records[index];
@@ -893,12 +893,12 @@ class CreateRecords {
   static async createRecords(moduleAPIName) {
     //example
     //let moduleAPIName = "module_api_name";
-    let recordOperations = new ZOHOCRMSDK.Records.RecordOperations(moduleAPIName);
-    let request = new ZOHOCRMSDK.Records.BodyWrapper();
+    let recordOperations = new ZOHOCRMSDK.Record.RecordOperations(moduleAPIName);
+    let request = new ZOHOCRMSDK.Record.BodyWrapper();
     let recordsArray = [];
-    let record = new ZOHOCRMSDK.Records.Record();
-    record.addFieldValue(ZOHOCRMSDK.Records.Field.Leads.LAST_NAME, "Node JS SDK");
-    record.addFieldValue(ZOHOCRMSDK.Records.Field.Leads.FIRST_NAME, "Node");
+    let record = new ZOHOCRMSDK.Record.Record();
+    record.addFieldValue(ZOHOCRMSDK.Record.Field.Leads.LAST_NAME, "Node JS SDK");
+    record.addFieldValue(ZOHOCRMSDK.Record.Field.Leads.FIRST_NAME, "Node");
     recordsArray.push(record);
     request.setData(recordsArray);
     let headerInstance = new ZOHOCRMSDK.HeaderMap();
@@ -907,10 +907,10 @@ class CreateRecords {
       console.log("Status Code: " + response.getStatusCode());
       let responseObject = response.getObject();
       if (responseObject != null) {
-        if (responseObject instanceof ZOHOCRMSDK.Records.ActionWrapper) {
+        if (responseObject instanceof ZOHOCRMSDK.Record.ActionWrapper) {
           let actionResponses = responseObject.getData();
           actionResponses.forEach(actionResponse => {
-            if (actionResponse instanceof ZOHOCRMSDK.Records.SuccessResponse) {
+            if (actionResponse instanceof ZOHOCRMSDK.Record.SuccessResponse) {
               console.log("Status: " + actionResponse.getStatus().getValue());
               console.log("Code: " + actionResponse.getCode().getValue());
               console.log("Details");
@@ -921,7 +921,7 @@ class CreateRecords {
                 });
               }
               console.log("Message: " + actionResponse.getMessage().getValue());
-            } else if (actionResponse instanceof ZOHOCRMSDK.Records.APIException) {
+            } else if (actionResponse instanceof ZOHOCRMSDK.Record.APIException) {
               console.log("Status: " + actionResponse.getStatus().getValue());
               console.log("Code: " + actionResponse.getCode().getValue());
               console.log("Details");
