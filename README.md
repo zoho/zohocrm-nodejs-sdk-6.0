@@ -25,6 +25,10 @@ License
 
 ## Latest Version
 
+- [4.0.0](/versions/4.0.0/README.md)
+    - Handled Record `rollup_summary` datatype.
+    - Supported multiple field update operations in the FieldsOperations class.
+
 - [3.0.0](/versions/3.0.0/README.md)
   - Blueprint Transition ***percentPartialSave*** field datatype changed(Integer to Float).
   - Blueprint Field ***convertMapping*** field datatype changed(ConvertMapping to Map).
@@ -70,7 +74,7 @@ For older versions, please [refer](https://github.com/zoho/zohocrm-nodejs-sdk-6.
 ## Including the SDK in your project
 You can include the SDK to your project using:
 
-For including the latest [version](https://github.com/zoho/zohocrm-nodejs-sdk-6.0/releases/tag/3.0.0) using npm
+For including the latest [version](https://github.com/zoho/zohocrm-nodejs-sdk-6.0/releases/tag/4.0.0) using npm
 
   - Install **Node** from [nodejs.org](https://nodejs.org/en/download/) (if not installed).
 
@@ -121,11 +125,11 @@ For including the latest [version](https://github.com/zoho/zohocrm-nodejs-sdk-6.
 > - The **access and refresh tokens are environment-specific and domain-specific**. When you handle various environments and domains such as **Production**, **Sandbox**, or **Developer** and **IN**, **CN**, **US**, **EU**, **JP**, or **AU**, respectively, you must use the access token and refresh token generated only in those respective environments and domains. The SDK throws an error, otherwise.
 For example, if you generate the tokens for your Sandbox environment in the CN domain, you must use only those tokens for that domain and environment. You cannot use the tokens generated for a different environment or a domain.
 
-> - For **Deal Contact Roles API and Records API**, you will need to provide the **ZohoCRM.settings.fields.ALL** scope along with the **ZohoCRM.modules.ALL** scope while generating the OAuthtoken. Otherwise, the system returns the **OAUTH-SCOPE-MISMATCH** error.
+> - For **Deal Contact Roles API and Records API**, you will need to provide the **ZohoCRM.settings.ALL** scope along with the **ZohoCRM.modules.ALL** scope while generating the OAuthtoken. Otherwise, the system returns the **OAUTH-SCOPE-MISMATCH** error.
 
-> - For **Related Records API**, the scopes required for generating OAuthtoken are **ZohoCRM.modules.ALL**, **ZohoCRM.settings.fields.ALL** and **ZohoCRM.settings.related_lists.ALL**. Otherwise, the system returns the **OAUTH-SCOPE-MISMATCH** error.
+> - For **Related Records API**, the scopes required for generating OAuthtoken are **ZohoCRM.modules.ALL**, **ZohoCRM.settings.ALL** and **ZohoCRM.settings.related_lists.ALL**. Otherwise, the system returns the **OAUTH-SCOPE-MISMATCH** error.
 
-> - For **Mass Convert API**, you will need to provide the **ZohoCRM.settings.fields.ALL** scope along with the **ZohoCRM.mass_convert.leads.CREATE** and **ZohoCRM.mass_convert.leads.READ** scope while generating the OAuthtoken. Otherwise, the system returns the **OAUTH-SCOPE-MISMATCH** error.
+> - For **Mass Convert API**, you will need to provide the **ZohoCRM.settings.ALL** scope along with the **ZohoCRM.mass_convert.leads.CREATE** and **ZohoCRM.mass_convert.leads.READ** scope while generating the OAuthtoken. Otherwise, the system returns the **OAUTH-SCOPE-MISMATCH** error.
 
 ---
-For more details, kindly refer [here](/versions/3.0.0/README.md).
+For more details, kindly refer [here](/versions/4.0.0/README.md).
